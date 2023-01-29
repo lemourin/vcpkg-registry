@@ -1,0 +1,17 @@
+diff --git a/evdns.c b/evdns.c
+index 05e515c0..8718a272 100644
+--- a/evdns.c
++++ b/evdns.c
+@@ -4501,8 +4501,12 @@ evdns_get_default_hosts_filename(void)
+ 	char *path_out;
+ 	size_t len_out;
+ 
++#ifdef CSIDL_SYSTEM
+ 	if (! SHGetSpecialFolderPathA(NULL, path, CSIDL_SYSTEM, 0))
+ 		return NULL;
++#else
++	return NULL;
++#endif
+ 	len_out = strlen(path)+strlen(hostfile)+1;
+ 	path_out = mm_malloc(len_out);
+ 	evutil_snprintf(path_out, len_out, "%s%s", path, hostfile);
