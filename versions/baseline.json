@@ -7,6 +7,18 @@
     "coro-cloudstorage": {
       "baseline": "0.1.0",
       "port-version": 0
+    },
+    "ffmpeg": {	    
+      "baseline": "5.1.2",
+      "port-version": 1
+    },
+    "c-ares": {
+      "baseline": "1.19.0",
+      "port-version": 0
+    },
+    "libevent": {
+      "baseline": "2.1.12",
+      "port-version": 8
     }
   }
 }
