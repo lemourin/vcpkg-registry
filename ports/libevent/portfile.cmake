@@ -28,6 +28,10 @@ else()
     set(LIBEVENT_STATIC_RUNTIME OFF)
 endif()
 
+if(VCPKG_TARGET_IS_UWP)
+    list(APPEND FEATURE_OPTIONS "-DEVENT__HAVE_AFUNIX_H=0")
+endif()
+
 vcpkg_cmake_configure(
     SOURCE_PATH "${SOURCE_PATH}"
     OPTIONS ${FEATURE_OPTIONS}
