@@ -9,17 +9,7 @@
         "ssl",
         "http2",
         "c-ares"
-      ],
-      "platform": "!uwp"
-    },
-    {
-      "name": "curl",
-      "default-features": false,
-      "features": [
-        "ssl",
-        "http2"
-      ],
-      "platform": "uwp"
+      ]
     },
     "libevent",
     "boost-regex",
