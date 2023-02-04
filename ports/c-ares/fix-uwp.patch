@@ -25,6 +25,51 @@ index 7940ecd..aacfa52 100644
    PMIB_UNICASTIPADDRESS_TABLE table;
    unsigned int i;
    int status;
+diff --git a/src/lib/ares_getaddrinfo.c b/src/lib/ares_getaddrinfo.c
+index bc9f19b..1bb0e15 100644
+--- a/src/lib/ares_getaddrinfo.c
++++ b/src/lib/ares_getaddrinfo.c
+@@ -467,8 +467,10 @@ static int file_lookup(struct host_query *hquery)
+               RegCloseKey(hkeyHosts);
+             }
+         }
++#ifndef WINRT
+       else if (platform == WIN_9X)
+         GetWindowsDirectoryA(PATH_HOSTS, MAX_PATH);
++#endif
+       else
+         return ARES_ENOTFOUND;
+ 
+diff --git a/src/lib/ares_gethostbyaddr.c b/src/lib/ares_gethostbyaddr.c
+index c62d230..6d47328 100644
+--- a/src/lib/ares_gethostbyaddr.c
++++ b/src/lib/ares_gethostbyaddr.c
+@@ -194,8 +194,10 @@ static int file_lookup(struct ares_addr *addr, struct hostent **host)
+       RegCloseKey(hkeyHosts);
+     }
+   }
++#ifndef WINRT
+   else if (platform == WIN_9X)
+     GetWindowsDirectoryA(PATH_HOSTS, MAX_PATH);
++#endif
+   else
+     return ARES_ENOTFOUND;
+ 
+diff --git a/src/lib/ares_gethostbyname.c b/src/lib/ares_gethostbyname.c
+index 8c71cc6..3954244 100644
+--- a/src/lib/ares_gethostbyname.c
++++ b/src/lib/ares_gethostbyname.c
+@@ -278,8 +278,10 @@ static int file_lookup(const char *name, int family, struct hostent **host)
+       RegCloseKey(hkeyHosts);
+     }
+   }
++#ifndef WINRT
+   else if (platform == WIN_9X)
+     GetWindowsDirectoryA(PATH_HOSTS, MAX_PATH);
++#endif
+   else
+     return ARES_ENOTFOUND;
+ 
 diff --git a/src/lib/ares_init.c b/src/lib/ares_init.c
 index 3f9cec6..63143e0 100644
 --- a/src/lib/ares_init.c
