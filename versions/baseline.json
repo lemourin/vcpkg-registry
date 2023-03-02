@@ -6,11 +6,7 @@
     },
     "coro-cloudstorage": {
       "baseline": "0.1.0",
-      "port-version": 0
-    },
-    "c-ares": {
-      "baseline": "1.19.0",
-      "port-version": 0
+      "port-version": 1
     }
   }
 }
