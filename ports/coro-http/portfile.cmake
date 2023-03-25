@@ -1,8 +1,8 @@
 vcpkg_from_github(
   OUT_SOURCE_PATH SOURCE_PATH
   REPO lemourin/coro-http
-  REF 6c5237edd6e9de08b4c765a3e48cc8c754c3e59f
-  SHA512 c9cc9bb153bd8b850fcd583b2a921519935341a443e716b6d31c13c605dde26535d97b06657af996cb2c969214b6701eb2af1d485e49f386dbfd46da20430a15
+  REF 6f496d70615fdc3aa6ea48ded27a62d563f46ab5
+  SHA512 6fdc1b439b53b1fcae1ef35b56690fd6dd0e3aaddfb9ed0f2a360162e80ab9489167b1b99d6b9085c665740fb9d5fda7c60acf9f324580df90d4f0e0b6d40da8
   HEAD_REF master
 )
 
@@ -11,6 +11,7 @@ vcpkg_configure_cmake(
   PREFER_NINJA
   OPTIONS
     -DBUILD_EXAMPLES=OFF
+    -DBOOST_STACKTRACE=OFF
 )
 vcpkg_cmake_install(DISABLE_PARALLEL)
 vcpkg_cmake_config_fixup(CONFIG_PATH share/cmake/coro-http)
