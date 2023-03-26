@@ -1,7 +1,7 @@
 {
   "name": "coro-http",
   "version-string": "0.1.0",
-  "port-version": 2,
+  "port-version": 3,
   "dependencies": [
     {
       "name": "curl",
@@ -22,5 +22,17 @@
       "name": "vcpkg-cmake-config",
       "host": true
     }
-  ]
+  ],
+  "features": {
+    "stacktrace": {
+      "description": "Enable stacktraces in exceptions.",
+      "dependencies": [
+        "boost-stacktrace",
+        {
+          "name": "libbacktrace",
+          "platform": "!windows | mingw"
+        }
+      ]
+    }
+  }
 }
