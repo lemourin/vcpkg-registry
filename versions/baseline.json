@@ -2,7 +2,7 @@
   "default": {
     "coro-http": {
       "baseline": "0.1.0",
-      "port-version": 3
+      "port-version": 4
     },
     "coro-cloudstorage": {
       "baseline": "0.1.0",
