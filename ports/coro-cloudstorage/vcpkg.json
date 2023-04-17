@@ -1,7 +1,7 @@
 {
   "name": "coro-cloudstorage",
   "version-string": "0.1.0",
-  "port-version": 5,
+  "port-version": 6,
   "dependencies": [
     "coro-http",
     "nlohmann-json",
@@ -11,7 +11,9 @@
     "cryptopp",
     {
       "name": "ffmpeg",
-      "features": ["zlib"]
+      "features": [
+        "zlib"
+      ]
     },
     {
       "name": "cppwinrt",
