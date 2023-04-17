@@ -38,6 +38,11 @@
       "version": "0.1.0",
       "port-version": 7,
       "git-tree": "b028a1f876fdb8b6a5d6adee4ad157abdc8ac42a"
+    },
+    {
+      "version": "0.1.0",
+      "port-version": 8,
+      "git-tree": "d5457ab18837904bbadd279bc6a746c21b9bb114"
     }
   ]
 }

@@ -1,13 +1,14 @@
 {
   "name": "coro-http",
   "version-string": "0.1.0",
-  "port-version": 7,
+  "port-version": 8,
   "dependencies": [
     {
       "name": "curl",
       "default-features": false,
       "features": [
         "ssl",
+        "http2",
         "c-ares"
       ]
     },
