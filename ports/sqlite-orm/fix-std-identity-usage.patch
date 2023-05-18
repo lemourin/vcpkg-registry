@@ -1,0 +1,42 @@
+From 7a9f592958444228d24a44b72312666c9f206ac1 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Pawe=C5=82=20Wegner?= <pawel.wegner95@gmail.com>
+Date: Thu, 18 May 2023 13:00:32 +0200
+Subject: [PATCH] Fix version check guarding std::identity usage.
+
+_LIBCPP_VERSION consists of 5 digits [1].
+
+[1]: https://github.com/llvm/llvm-project/blob/1bd7c02233969b430b2d49e95345f507fdcc9f30/libcxx/include/__config#L35
+---
+ dev/functional/cxx_functional_polyfill.h | 2 +-
+ include/sqlite_orm/sqlite_orm.h          | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/dev/functional/cxx_functional_polyfill.h b/dev/functional/cxx_functional_polyfill.h
+index 5380f2fc..e2af5077 100644
+--- a/dev/functional/cxx_functional_polyfill.h
++++ b/dev/functional/cxx_functional_polyfill.h
+@@ -21,7 +21,7 @@ namespace sqlite_orm {
+             //
+             // Another way of detection would be the constrained algorithms feature macro __cpp_lib_ranges
+ #if(__cplusplus >= 202002L) &&                                                                                         \
+-    ((!_LIBCPP_VERSION || _LIBCPP_VERSION >= 13) && (!_GLIBCXX_RELEASE || _GLIBCXX_RELEASE >= 10))
++    ((!_LIBCPP_VERSION || _LIBCPP_VERSION >= 13000) && (!_GLIBCXX_RELEASE || _GLIBCXX_RELEASE >= 10))
+             using std::identity;
+ #else
+             struct identity {
+diff --git a/include/sqlite_orm/sqlite_orm.h b/include/sqlite_orm/sqlite_orm.h
+index ae74309b..375ac5ad 100644
+--- a/include/sqlite_orm/sqlite_orm.h
++++ b/include/sqlite_orm/sqlite_orm.h
+@@ -7956,7 +7956,7 @@ namespace sqlite_orm {
+             //
+             // Another way of detection would be the constrained algorithms feature macro __cpp_lib_ranges
+ #if(__cplusplus >= 202002L) &&                                                                                         \
+-    ((!_LIBCPP_VERSION || _LIBCPP_VERSION >= 13) && (!_GLIBCXX_RELEASE || _GLIBCXX_RELEASE >= 10))
++    ((!_LIBCPP_VERSION || _LIBCPP_VERSION >= 13000) && (!_GLIBCXX_RELEASE || _GLIBCXX_RELEASE >= 10))
+             using std::identity;
+ #else
+             struct identity {
+-- 
+2.40.1
+
