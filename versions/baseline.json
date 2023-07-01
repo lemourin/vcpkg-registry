@@ -8,10 +8,6 @@
       "baseline": "0.1.0",
       "port-version": 19
     },
-    "curl": {
-      "baseline": "8.0.1",
-      "port-version": 1
-    },
     "sqlite-orm": {
       "baseline": "1.8.2",
       "port-version": 1
