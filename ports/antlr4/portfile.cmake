@@ -35,3 +35,15 @@ file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include" "${CURRENT_PACKAGES_
 vcpkg_copy_pdbs()
 
 file(INSTALL "${SOURCE_PATH}/LICENSE.txt" DESTINATION "${CURRENT_PACKAGES_DIR}/share/${PORT}" RENAME copyright)
+
+vcpkg_download_distfile(
+    ANTLR4_JAR_LOCATION
+    URLS https://www.antlr.org/download/antlr-4.13.0-complete.jar
+    FILENAME antlr4.jar
+    SHA512 cfa01c4586f21694db94c8540da0e84237ba00ad0fea946e85227210189a35c03cf7989954309fc54e0ae495de3fe5b48e468f703f16be0b1712406049310ae0
+)
+file(INSTALL "${ANTLR4_JAR_LOCATION}" DESTINATION "${CURRENT_PACKAGES_DIR}/share/antlr4-generator")
+file(READ "${CURRENT_PACKAGES_DIR}/share/antlr4-generator/antlr4-generator-config.cmake" ANTLR4_GENERATOR_CONFIG)
+file(
+    WRITE "${CURRENT_PACKAGES_DIR}/share/antlr4-generator/antlr4-generator-config.cmake" "set(ANTLR4_JAR_LOCATION \"\$\{CMAKE_CURRENT_LIST_DIR\}/antlr4.jar\")\n${ANTLR4_GENERATOR_CONFIG}"
+)
