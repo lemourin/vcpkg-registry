@@ -10,7 +10,7 @@
     },
     "coro-cloudstorage": {
       "baseline": "0.1.0",
-      "port-version": 23
+      "port-version": 24
     },
     "sqlite-orm": {
       "baseline": "1.8.2",
