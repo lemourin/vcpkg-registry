@@ -1,5 +1,9 @@
 {
   "default": {
+    "antlr4": {
+      "baseline": "4.11.1",
+      "port-version": 1
+    },
     "coro-http": {
       "baseline": "0.1.0",
       "port-version": 16
