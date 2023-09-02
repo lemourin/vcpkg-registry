@@ -1,9 +1,8 @@
 {
   "name": "coro-cloudstorage",
   "version-string": "0.1.0",
-  "port-version": 24,
+  "port-version": 25,
   "dependencies": [
-    "antlr4",
     "coro-http",
     "nlohmann-json",
     "fmt",
@@ -11,6 +10,7 @@
     "libevent",
     "cryptopp",
     "sqlite-orm",
+    "duktape",
     {
       "name": "ffmpeg",
       "features": [
