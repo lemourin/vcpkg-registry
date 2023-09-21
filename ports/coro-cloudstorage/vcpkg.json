@@ -1,7 +1,7 @@
 {
   "name": "coro-cloudstorage",
   "version-string": "0.1.0",
-  "port-version": 29,
+  "port-version": 30,
   "dependencies": [
     "coro-http",
     "nlohmann-json",
@@ -14,7 +14,8 @@
     {
       "name": "ffmpeg",
       "features": [
-        "zlib"
+        "zlib",
+        "dav1d"
       ]
     },
     {
