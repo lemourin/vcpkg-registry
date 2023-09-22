@@ -8,10 +8,6 @@
       "baseline": "0.1.0",
       "port-version": 32
     },
-    "sqlite-orm": {
-      "baseline": "1.8.2",
-      "port-version": 1
-    },
     "duktape": {
       "baseline": "2.7.0"
     }
