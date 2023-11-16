@@ -7,6 +7,9 @@
     "coro-cloudstorage": {
       "baseline": "0.1.0",
       "port-version": 32
+    },
+    "quictls": {
+      "baseline": "3.0.10+quic"
     }
   }
 }

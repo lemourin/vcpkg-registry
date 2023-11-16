@@ -1,0 +1,7 @@
+{
+  "name": "quictls",
+  "version": "3.0.10+quic",
+  "description": "TLS/SSL and crypto library with QUIC APIs",
+  "homepage": "https://github.com/quictls/openssl",
+  "license": "Apache-2.0"
+}
