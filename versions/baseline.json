@@ -10,6 +10,9 @@
     },
     "quictls": {
       "baseline": "3.0.10+quic"
+    },
+    "ngtcp2": {
+      "baseline": "1.0.1"
     }
   }
 }
