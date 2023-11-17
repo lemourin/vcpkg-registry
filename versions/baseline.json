@@ -12,7 +12,8 @@
       "baseline": "3.1.4+quic"
     },
     "ngtcp2": {
-      "baseline": "1.0.1"
+      "baseline": "1.0.1",
+      "port-version": 1
     },
     "curl": {
       "baseline": "8.4.0",
