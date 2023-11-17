@@ -1,0 +1,26 @@
+diff --git a/CMake/curl-config.cmake.in b/CMake/curl-config.cmake.in
+index 56f7c9dd9..483e3acee 100644
+--- a/CMake/curl-config.cmake.in
++++ b/CMake/curl-config.cmake.in
+@@ -38,4 +38,7 @@ check_required_components("@PROJECT_NAME@")
+ if(NOT TARGET @PROJECT_NAME@::libcurl)
+   add_library(@PROJECT_NAME@::libcurl INTERFACE IMPORTED)
+   set_target_properties(@PROJECT_NAME@::libcurl PROPERTIES INTERFACE_LINK_LIBRARIES @PROJECT_NAME@::@LIB_SELECTED@)
++  if(@BUILD_STATIC_LIBS@ AND @USE_NGTCP2@)
++    target_compile_definitions(@PROJECT_NAME@::libcurl INTERFACE -DNGHTTP3_STATICLIB -DNGTCP2_STATICLIB)
++  endif()
+ endif()
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 1b19c681d..d644adfb5 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -698,6 +698,9 @@ if(USE_NGTCP2)
+   set(USE_NGHTTP3 ON)
+   include_directories(${NGHTTP3_INCLUDE_DIRS})
+   list(APPEND CURL_LIBS ${NGHTTP3_LIBRARIES})
++  if(BUILD_STATIC_LIBS)
++    add_definitions(-DNGHTTP3_STATICLIB -DNGTCP2_STATICLIB)
++  endif()
+ endif()
+ 
+ option(USE_QUICHE "Use quiche library for HTTP/3 support" OFF)
