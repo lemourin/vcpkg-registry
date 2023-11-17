@@ -1,0 +1,13 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index edd9fc01..f6b4e1d6 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -146,7 +146,7 @@ if(ENABLE_OPENSSL AND OPENSSL_FOUND)
+   set(CMAKE_REQUIRED_INCLUDES   "${OPENSSL_INCLUDE_DIR}")
+   set(CMAKE_REQUIRED_LIBRARIES  "${OPENSSL_LIBRARIES}")
+   if(WIN32)
+-    set(CMAKE_REQUIRED_LIBRARIES "${CMAKE_REQUIRED_LIBRARIES}" "ws2_32" "bcrypt")
++    set(CMAKE_REQUIRED_LIBRARIES "${CMAKE_REQUIRED_LIBRARIES}" "ws2_32" "bcrypt" "crypt32")
+   endif()
+   check_symbol_exists(SSL_is_quic "openssl/ssl.h" HAVE_SSL_IS_QUIC)
+   if(NOT HAVE_SSL_IS_QUIC)

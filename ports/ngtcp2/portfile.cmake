@@ -7,6 +7,7 @@ vcpkg_from_github(
     PATCHES
       export-unofficical-target.patch
       static-popcnt.patch
+      fix-quic-detection.patch
 )
 
 string(COMPARE EQUAL "${VCPKG_LIBRARY_LINKAGE}" "static" ENABLE_STATIC_LIB)
