@@ -16,6 +16,7 @@ vcpkg_from_github(
         dependencies.patch
         cmake-config.patch # https://github.com/curl/curl/pull/11913
         static-link-ngtcp2.patch
+        fix-quic-detection.patch
 )
 
 vcpkg_check_features(OUT_FEATURE_OPTIONS FEATURE_OPTIONS
