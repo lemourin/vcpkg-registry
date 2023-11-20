@@ -2,21 +2,20 @@ string(REPLACE "." "_" curl_version "curl-${VERSION}")
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO curl/curl
-    REF "${curl_version}"
-    SHA512 c8550fef49e2f1571f7392a351e10bbdb23821069db1e988094fe27fe0a881a265ba69a2cd34462e630563d153462a975ef70472ba39adaad1c5e5ab45cf7f4f
+    REF "b9b50f3193914149fbdcc0d93f15298327b4803c"
+    SHA512 511d1920d15823b85b823db8d9b3a102a15691d587c906d05a6416e86c94df56cb420bfa95fa5309f3c82d64313ee31980925c27fc85789cfa670a5ea69137a7
     HEAD_REF master
     PATCHES
         0002_fix_uwp.patch
         0005_remove_imp_suffix.patch
-        0012-fix-dependency-idn2.patch
         0020-fix-pc-file.patch
         0022-deduplicate-libs.patch
         mbedtls-ws2_32.patch
         export-components.patch
         dependencies.patch
-        cmake-config.patch # https://github.com/curl/curl/pull/11913
         static-link-ngtcp2.patch
         fix-quic-detection.patch
+        fix-quic-crash.patch
 )
 
 vcpkg_check_features(OUT_FEATURE_OPTIONS FEATURE_OPTIONS
