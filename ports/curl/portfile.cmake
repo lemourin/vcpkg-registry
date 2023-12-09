@@ -15,6 +15,7 @@ vcpkg_from_github(
         dependencies.patch
         static-link-ngtcp2.patch
         fix-quic-detection.patch
+        fix-native-ca-cert-on-uwp.patch
 )
 
 vcpkg_check_features(OUT_FEATURE_OPTIONS FEATURE_OPTIONS
