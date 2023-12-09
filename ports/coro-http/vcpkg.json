@@ -1,7 +1,7 @@
 {
   "name": "coro-http",
   "version-string": "0.1.0",
-  "port-version": 23,
+  "port-version": 24,
   "dependencies": [
     {
       "name": "curl",
