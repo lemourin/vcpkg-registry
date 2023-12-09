@@ -2,8 +2,8 @@ string(REPLACE "." "_" curl_version "curl-${VERSION}")
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO curl/curl
-    REF "b9b50f3193914149fbdcc0d93f15298327b4803c"
-    SHA512 511d1920d15823b85b823db8d9b3a102a15691d587c906d05a6416e86c94df56cb420bfa95fa5309f3c82d64313ee31980925c27fc85789cfa670a5ea69137a7
+    REF "${curl_version}"
+    SHA512 0d431b894aeaff9e63cb9208830a074a3499dee2e9479ec64387f264e06b9544a09a63b262bb3fb85c39420610c2b43b4b4b87ecba5c7b4a08e89cefd2a9b17d
     HEAD_REF master
     PATCHES
         0002_fix_uwp.patch
@@ -15,7 +15,6 @@ vcpkg_from_github(
         dependencies.patch
         static-link-ngtcp2.patch
         fix-quic-detection.patch
-        fix-quic-crash.patch
 )
 
 vcpkg_check_features(OUT_FEATURE_OPTIONS FEATURE_OPTIONS

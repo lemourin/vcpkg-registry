@@ -16,7 +16,8 @@
       "port-version": 2
     },
     "curl": {
-      "baseline": "8.5.0"
+      "baseline": "8.5.0",
+      "port-version": 1
     }
   }
 }
