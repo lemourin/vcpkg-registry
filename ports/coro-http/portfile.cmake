@@ -1,8 +1,8 @@
 vcpkg_from_github(
   OUT_SOURCE_PATH SOURCE_PATH
   REPO lemourin/coro-http
-  REF 948dfd1aeee01dafd263ed0a489c54fc9e4d5dc7
-  SHA512 6b2208de9c2cc76c5ff84fd0299f4df4d7224554b4a143360a06e2244ad0fbb68c39b4065e4373e7cf3625541fc8f583c898bc929fd58cef8c5709a6085b6cc5
+  REF c08fc9c2ce54808c16d376f0ddee74b8f08a709c
+  SHA512 c0614060a4b118d01f3c9237c7f93d00c74ba0f8f6bcd56130dff0ccb70ca49302dbaf7bb3ae212f936155e6a5221b6391222945f8bb484be04918d549b0a0b9
   HEAD_REF master
 )
 
@@ -16,7 +16,7 @@ vcpkg_configure_cmake(
   PREFER_NINJA
   OPTIONS ${OPTIONS}
 )
-vcpkg_cmake_install(DISABLE_PARALLEL)
+vcpkg_cmake_install()
 vcpkg_cmake_config_fixup(CONFIG_PATH share/cmake/coro-http)
 
 file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")
