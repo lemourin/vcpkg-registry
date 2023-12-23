@@ -1,27 +1,27 @@
 {
   "name": "coro-cloudstorage",
   "version-string": "0.1.0",
-  "port-version": 35,
+  "port-version": 36,
   "dependencies": [
     "coro-http",
-    "nlohmann-json",
-    "fmt",
-    "pugixml",
-    "libevent",
-    "cryptopp",
-    "sqlite-orm",
-    "duktape",
-    {
-      "name": "ffmpeg",
-      "features": [
-        "zlib",
-        "dav1d"
-      ]
-    },
     {
       "name": "cppwinrt",
       "platform": "uwp"
     },
+    "cryptopp",
+    "duktape",
+    {
+      "name": "ffmpeg",
+      "features": [
+        "dav1d",
+        "zlib"
+      ]
+    },
+    "fmt",
+    "libevent",
+    "nlohmann-json",
+    "pugixml",
+    "sqlite-orm",
     {
       "name": "vcpkg-cmake",
       "host": true
