@@ -1,20 +1,20 @@
 {
   "name": "coro-http",
   "version-string": "0.1.0",
-  "port-version": 28,
+  "port-version": 29,
   "dependencies": [
+    "boost-regex",
     {
       "name": "curl",
       "default-features": false,
       "features": [
-        "ssl",
+        "c-ares",
         "http2",
         "http3",
-        "c-ares"
+        "ssl"
       ]
     },
     "libevent",
-    "boost-regex",
     {
       "name": "vcpkg-cmake",
       "host": true

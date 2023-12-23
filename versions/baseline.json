@@ -6,11 +6,11 @@
     },
     "coro-http": {
       "baseline": "0.1.0",
-      "port-version": 28
+      "port-version": 29
     },
     "curl": {
       "baseline": "8.5.0",
-      "port-version": 2
+      "port-version": 3
     },
     "ngtcp2": {
       "baseline": "1.0.1",
