@@ -6,7 +6,7 @@
     },
     "coro-http": {
       "baseline": "0.1.0",
-      "port-version": 29
+      "port-version": 30
     },
     "curl": {
       "baseline": "8.5.0",
