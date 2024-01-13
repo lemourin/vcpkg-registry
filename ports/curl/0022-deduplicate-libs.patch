@@ -1,8 +1,8 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index aba80ebb7..7ea702f8e 100644
+index 0ceaf5b..ec714a5 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -1684,6 +1684,7 @@ if(NOT CURL_DISABLE_INSTALL)
+@@ -1682,6 +1682,7 @@ if(NOT CURL_DISABLE_INSTALL)
    else()
      set(ENABLE_SHARED         "no")
      set(LIBCURL_NO_SHARED     "${LIBCURL_LIBS}")

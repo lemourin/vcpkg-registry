@@ -1,8 +1,8 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index db138237a..aba80ebb7 100644
+index 3b83a7f..0ceaf5b 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -1654,7 +1654,9 @@ if(NOT CURL_DISABLE_INSTALL)
+@@ -1652,7 +1652,9 @@ if(NOT CURL_DISABLE_INSTALL)
    set(LDFLAGS                 "${CMAKE_SHARED_LINKER_FLAGS}")
    set(LIBCURL_LIBS            "")
    set(libdir                  "${CMAKE_INSTALL_PREFIX}/lib")

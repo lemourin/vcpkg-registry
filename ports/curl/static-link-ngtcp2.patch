@@ -1,25 +1,25 @@
 diff --git a/CMake/curl-config.cmake.in b/CMake/curl-config.cmake.in
-index a013adf7a..fe0bda84e 100644
+index 2f39949bc..1000a477a 100644
 --- a/CMake/curl-config.cmake.in
 +++ b/CMake/curl-config.cmake.in
-@@ -47,4 +47,7 @@ check_required_components("@PROJECT_NAME@")
- # Alias for either shared or static library
+@@ -48,4 +48,7 @@ check_required_components("@PROJECT_NAME@")
  if(NOT TARGET @PROJECT_NAME@::libcurl)
-   add_library(@PROJECT_NAME@::libcurl ALIAS @PROJECT_NAME@::@LIB_SELECTED@)
+   add_library(@PROJECT_NAME@::libcurl INTERFACE IMPORTED)
+   set_target_properties(@PROJECT_NAME@::libcurl PROPERTIES INTERFACE_LINK_LIBRARIES @PROJECT_NAME@::@LIB_SELECTED@)
 +  if(@BUILD_STATIC_LIBS@ AND @USE_NGTCP2@)
-+    target_compile_definitions(@PROJECT_NAME@::@LIB_SELECTED@ INTERFACE -DNGHTTP3_STATICLIB -DNGTCP2_STATICLIB)
++    target_compile_definitions(@PROJECT_NAME@::@LIB_SELECTED@ INTERFACE -DNGTCP2_STATICLIB -DNGHTTP3_STATICLIB)
 +  endif()
  endif()
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index eafa581ca..ba8b48d79 100644
+index a2c0b388e..076652c8a 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -703,6 +703,9 @@ if(USE_NGTCP2)
+@@ -705,6 +705,9 @@ if(USE_NGTCP2)
    set(USE_NGHTTP3 ON)
    include_directories(${NGHTTP3_INCLUDE_DIRS})
    list(APPEND CURL_LIBS ${NGHTTP3_LIBRARIES})
 +  if(BUILD_STATIC_LIBS)
-+    add_definitions(-DNGHTTP3_STATICLIB -DNGTCP2_STATICLIB)
++    add_definitions(-DNGTCP2_STATICLIB -DNGHTTP3_STATICLIB)
 +  endif()
  endif()
  
