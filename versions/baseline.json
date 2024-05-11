@@ -21,7 +21,7 @@
       "port-version": 0
     },
     "quictls": {
-      "baseline": "3.1.4+quic",
+      "baseline": "3.1.5+quic",
       "port-version": 0
     }
   }

@@ -19,7 +19,7 @@ vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO quictls/openssl
     REF "openssl-${VERSION}"
-    SHA512 0038467327ca51bdd585ae8eaa058b3f826a982037eb62604fac25d8b7e1b8b245044b06ef480d019dfec60355e68fbbdf15cb217b8388811a0a28de051b77be
+    SHA512 5ddc9770ec42d212df102c9dac09ea01bcd9a0f093af291af69d9d26596f25c5da00ca218b1ef4566e9abeb2db7b260b9eb10eb6ae2708645059f205b0086753
     PATCHES
         disable-apps.patch
         disable-install-docs.patch
