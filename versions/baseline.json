@@ -7,6 +7,10 @@
     "coro-http": {
       "baseline": "0.1.0",
       "port-version": 32
+    },
+    "curl": {
+      "baseline": "8.10.1",
+      "port-version": 0
     }
   }
 }
