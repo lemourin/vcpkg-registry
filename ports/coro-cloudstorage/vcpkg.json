@@ -1,7 +1,7 @@
 {
   "name": "coro-cloudstorage",
   "version": "0.1.0",
-  "port-version": 43,
+  "port-version": 44,
   "dependencies": [
     "coro-http",
     {
